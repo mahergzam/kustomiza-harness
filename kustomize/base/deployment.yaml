@@ -22,11 +22,13 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: harness/todolist-sample:latest
+        image: <+pipeline.variables.image>
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:
+        - username:
+          value: <+pipeline.variables.username>
         - name: ENV_NAME
           value: <+env.name>
         - name: ENV_TYPE
