@@ -27,7 +27,7 @@ spec:
         ports:
         - containerPort: 5000
         env:
-        - username:
+        - name: username
           value: <+pipeline.variables.username>
         - name: ENV_NAME
           value: <+env.name>
